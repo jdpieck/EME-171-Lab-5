@@ -3,17 +3,17 @@ parameters; % Load parameters
 initial = initialize();
 tspan = 0:t_step:t_end;
 
-ODE_Function = @(t,s) eqns(t, s, ...
+ode_handle = @(t,s) eqns(t, s, ...
     rho, g, L, A_t, A_p, d_0, d_1, d_2, C_f, turbine_handle, C_t, I_p);
 
-[t, s] = ode45(ODE_Function, tspan, initial);
+[t, s] = ode45(ode_handle, tspan, initial);
 
 %% Graphing
-ext = zeros(length(t), 3);
-ds = zeros(length(t), 4);
+% ext = zeros(length(t), 3);
+% ds = zeros(length(t), 4);
 
-for i = 1:length(t) 
-    [ds(i,:), ext(i,:)] = eqns(t(i), s(i,:),rho,g,L,A_t,A_p,d_0,d_1,d_2,C_f,turbine_handle,C_t,I_p);
-end
+% for i = 1:length(t) 
+%     [ds(i,:), ext(i,:)] = eqns(t(i), s(i,:),rho,g,L,A_t,A_p,d_0,d_1,d_2,C_f,turbine_handle,C_t,I_p);
+% end
 
 display_output;
