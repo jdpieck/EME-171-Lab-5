@@ -1,26 +1,20 @@
 %% --- Physical Parameters Initialization ---
 % This script initializes all physical parameters for the bicycle model
 
-%% Vehicle and Motor Parameters
+rho = 1000; %kg/m^3, density of water
+g = 9.81; %m/s^2, gravitational acceleration
+%A_t = 0.5; %Original Guess
+A_t = 0.75; %m^2, area of tanks
+A_p = 0.1; %m^2, area of pipe from reservoir to turbine
+L = 50; %m, Length of pipes
+d_0 = 20; %m, depth of initial inlet
+d_1 = 20; %m, depth of inlet to first tank
+d_2 = 20; %m, depth of inlet to second tank
+C_f = 49000; %kg/m^7, fluid pipe resistance coefficient
+Q_init = 1.5; %m^3/s, steady-state flow rate through the turbine
 
-R_w  = 0.3;          % Armature winding resistance (Ohms)
-L_w  = 0.015;        % Armature winding inductance (Henries)
-T_m  = 1.718;        % Motor transduction coefficient (Webers or Nm/A)
-M   = 2200;         % Vehicle mass (kg)
-b_tau = 0.05;       % Drive shaft viscous friction (N·m·s/rad)
-
-R   = 0.2;          % Wheel radius (meters)
-G_R  = 5;            % Gear ratio (dimensionless, 5:1)
-
-C_R  = 0.006;        % Rolling resistance coefficient (dimensionless)
-g   = 9.81;         % Acceleration due to gravity (m/s^2)
-
-C_D  = 0.32;         % Aerodynamic drag coefficient (dimensionless)
-rho = 1.21;         % Air density (kg/m^3)
-A_f  = 2.05;         % Vehicle frontal area (m^2)
-
-u_in = ??;          % Input voltage to the motor (Volts) - Define as needed
-
+C_t = A_t / (rho * g);
+I_p = (rho * L) / A_p;
 
 % Maximum water level for overflow check (5m above the reservoir level)
 % This is used later to check if h1 or h2 exceeds this max height.
