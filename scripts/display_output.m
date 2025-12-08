@@ -9,16 +9,16 @@ v_vehicle = s(:,2) / M;   % Vehicle Velocity (m/s)
 
 % 2. Reconstruct the input signal for plotting
 % We loop through the time vector 't' to see what the input was at each step
-u_plot = zeros(length(t), 1);
-for k = 1:length(t)
-    u_plot(k) = velocity_profile(t(k), t_start, u_in);
-end
+% u_plot = zeros(length(t), 1);
+% for k = 1:length(t)
+%     u_plot(k) = velocity_profile(t(k), t_start, u_in);
+% end
 
 % 3. Generate the Plots
 figure('Name', 'Lab 5 Simulation Results', 'Color', 'w');
 
 % Top Plot: Vehicle Velocity (The Response)
-subplot(2,1,1);
+% subplot(2,1,1);
 plot(t, v_vehicle, 'b', 'LineWidth', 2);
 title('Response: Vehicle Velocity');
 xlabel('Time (s)');
@@ -26,12 +26,12 @@ ylabel('Velocity (m/s)');
 grid on;
 
 % Bottom Plot: Input Voltage (The Input)
-subplot(2,1,2);
-plot(t, u_plot, 'r--', 'LineWidth', 2);
-title('Input: Voltage Profile (u_{in})');
-xlabel('Time (s)');
-ylabel('Voltage (V)');
-grid on;
+% subplot(2,1,2);
+% plot(t, u_plot, 'r--', 'LineWidth', 2);
+% title('Input: Voltage Profile (u_{in})');
+% xlabel('Time (s)');
+% ylabel('Voltage (V)');
+% grid on;
 
 % Print steady state velocity for verification
 fprintf('Final Velocity: %.4f m/s\n', v_vehicle(end));
