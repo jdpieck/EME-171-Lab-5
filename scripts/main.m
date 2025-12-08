@@ -3,8 +3,10 @@ parameters; % Load parameters
 initial = initialize();
 tspan = 0:t_step:t_end;
 
+velocity_handle = @(t) velocity_profile(t, t_start, u_in);
+
 ode_handle = @(t,s) eqns(t, s, ...
-    rho, g, L, A_t, A_p, d_0, d_1, d_2, C_f, turbine_handle, C_t, I_p);
+   R_w, L_w, T_m, M, b_tau, R, G_R, C_R, g, velocity_handle);
 
 [t, s] = ode45(ode_handle, tspan, initial);
 
