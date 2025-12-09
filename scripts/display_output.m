@@ -7,6 +7,11 @@ close all;
 i_motor = s(:,1) / L_w;   % Motor Current (Amps)
 v_vehicle = s(:,2) / M;   % Vehicle Velocity (m/s)
 
+v_ref=zeros(length(t),1); 
+for i=1:length(t) 
+    v_ref(i) = LA92Oracle(t(i)); 
+end 
+
 % 2. Reconstruct the input signal for plotting
 % We loop through the time vector 't' to see what the input was at each step
 % u_plot = zeros(length(t), 1);
@@ -19,11 +24,15 @@ figure('Name', 'Lab 5 Simulation Results', 'Color', 'w');
 
 % Top Plot: Vehicle Velocity (The Response)
 % subplot(2,1,1);
+hold on 
 plot(t, v_vehicle, 'b', 'LineWidth', 2);
+plot(t, v_ref, 'r', 'LineWidth', 1, "LineStyle","--");
 title('Response: Vehicle Velocity');
 xlabel('Time (s)');
 ylabel('Velocity (m/s)');
 grid on;
+hold off;
+
 
 % Bottom Plot: Input Voltage (The Input)
 % subplot(2,1,2);
