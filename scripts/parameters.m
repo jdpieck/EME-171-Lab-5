@@ -17,8 +17,8 @@ rho = 1.21;         % Air Density (kg/m^3)
 A_f = 2.05;         % Vehicle Frontal Area (m^2)
 
 % --- Simulation Control ---
-t_start = 0.2; % sec after the sim starts
-t_end = t_start + 4; % sec
+t_start = 0; % sec after the sim starts
+t_end = t_start + 300; % sec
 t_step = 0.01; % sec
 u_in = 100; % V
 v_ref = 1; % m/s
