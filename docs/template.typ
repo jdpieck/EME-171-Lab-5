@@ -16,6 +16,7 @@
   )
   
   show link: it => underline(text(accent.lighten(10%), it))
+  show ref: it => underline(text(accent.lighten(10%), it))
   set text(font: "IBM Plex Sans", lang: "en")
 
   show figure.caption: set text(.9em, fill: accent, weight: "semibold")

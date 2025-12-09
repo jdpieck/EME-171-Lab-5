@@ -11,6 +11,8 @@ ode_handle = @(t,s) eqns(t, s, ...
 
 [t, s] = ode45(ode_handle, tspan, initial);
 
+disp(s(end, 4) - s(end, 5))
+
 %% Graphing
 ext = zeros(length(t), 2);
 ds = zeros(length(t), 4);
@@ -28,6 +30,7 @@ P_out_acc = P_out(P_out>0);
 disp(mean(P_in_acc))
 disp(mean(P_out_acc))
 
+% efffiency
 disp(mean(P_out_acc)/mean(P_in_acc))
 
 % display_output;
