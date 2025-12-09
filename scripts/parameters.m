@@ -24,8 +24,8 @@ u_in = 100; % V
 v_ref = 1; % m/s
 
 % --- PI Control ---
-K_p = 175;
-K_i = 1;
+K_p = 100;
+K_i = 435;
 
 
 
