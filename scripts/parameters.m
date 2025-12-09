@@ -25,7 +25,7 @@ v_ref = 1; % m/s
 
 % --- PI Control ---
 K_p = 175;
-K_i = 0*K_p/20;
+K_i = 1;
 
 
 
