@@ -1,7 +1,7 @@
 clear;
 parameters; % Load parameters
 initial = initialize();
-tspan = 0:t_step:t_end;
+tspan = t_start:t_step:t_end;
 
 %velocity_handle = @(t) velocity_profile(t,t_start,v_ref);
 velocity_handle = @(t) LA92Oracle(t);
