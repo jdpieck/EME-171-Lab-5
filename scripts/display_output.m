@@ -20,17 +20,19 @@ end
 % end
 
 % 3. Generate the Plots
-figure('Name', 'Lab 5 Simulation Results', 'Color', 'w');
+figure('Name', 'Lab 5 Simulation Results', 'Color', 'w', 'Position', [50, 50, 700, 400]);
 
 % Top Plot: Vehicle Velocity (The Response)
 % subplot(2,1,1);
 hold on 
-plot(t, v_vehicle, 'b', 'LineWidth', 2);
-plot(t, v_ref, 'r', 'LineWidth', 1, "LineStyle","--");
+plot(t, v_vehicle, 'b', 'LineWidth', 1.2);
+plot(t, v_ref, 'r', 'LineWidth', 1.2, "LineStyle","-.");
+legend({'Actual', 'Reference'})
 title('Response: Vehicle Velocity');
 xlabel('Time (s)');
 ylabel('Velocity (m/s)');
 grid on;
+axis([32,54,4,8]);
 hold off;
 
 
