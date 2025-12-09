@@ -7,6 +7,6 @@ i=max(1,min(1435, floor(t)+1));
 %disp(i);
 
 v=Velocity(i)+((t-Time(i))/(Time(i+1)-Time(i)))*(Velocity(i+1)-Velocity(i));
-disp(v);
+% disp(v);
 end
 
