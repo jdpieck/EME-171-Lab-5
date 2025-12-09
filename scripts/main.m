@@ -19,4 +19,15 @@ for i = 1:length(t)
     [ds(i,:), ext(i,:)] = eqns(t(i), s(i,:),R_w, L_w, T_m, M, b_tau, R, G_R, C_R, g, K_p, K_i, velocity_handle);
 end
 
+P_in = ext(:, 1);
+P_out = ext(:, 2);
+
+P_in_acc = P_in(P_out>0);
+P_out_acc = P_out(P_out>0);
+
+disp(mean(P_in_acc))
+disp(mean(P_out_acc))
+
+disp(mean(P_out_acc)/mean(P_in_acc))
+
 % display_output;
