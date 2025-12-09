@@ -27,6 +27,4 @@ v_ref = 1; % m/s
 K_p = 100;
 K_i = 435;
 
-
-
 disp('Parameters initialized successfully.');

@@ -1,9 +1,5 @@
 close all;
 
-% 1. Recover physical variables from the state vector 's'
-% s(:,1) = Flux Linkage (p_L). Current i = p_L / L_w
-% s(:,2) = Momentum (p_M).     Velocity v = p_M / M
-
 i_motor = s(:,1) / L_w;   % Motor Current (Amps)
 v_vehicle = s(:,2) / M;   % Vehicle Velocity (m/s)
 
@@ -12,14 +8,8 @@ for i=1:length(t)
     v_ref(i) = LA92Oracle(t(i)); 
 end 
 
-% 2. Reconstruct the input signal for plotting
-% We loop through the time vector 't' to see what the input was at each step
-% u_plot = zeros(length(t), 1);
-% for k = 1:length(t)
-%     u_plot(k) = velocity_profile(t(k), t_start, u_in);
-% end
 
-% 3. Generate the Plots
+%% Generate the Plots
 figure('Name', 'Lab 5 Simulation Results', 'Color', 'w', 'Position', [50, 50, 700, 400]);
 
 % Top Plot: Vehicle Velocity (The Response)

@@ -12,16 +12,8 @@
 #raw(read("../scripts/parameters.m"))
 
 #pagebreak()
-== initialize.m
-#raw(read("../scripts/initialize.m"))
-
-#pagebreak()
-== find_time_control_parameters.m
-#raw(read("../scripts/find_time_control_parameters.m"))
-
-#pagebreak()
-== road_profile.m
-#raw(read("../scripts/turbine_profile.m"))
+== velocity_profile.m
+#raw(read("../scripts/velocity_profile.m"))
 
 #pagebreak()
 == eqns.m
