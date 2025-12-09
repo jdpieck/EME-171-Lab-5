@@ -12,11 +12,22 @@ ode_handle = @(t,s) eqns(t, s, ...
 [t, s] = ode45(ode_handle, tspan, initial);
 
 %% Graphing
-% ext = zeros(length(t), 3);
-% ds = zeros(length(t), 4);
+ext = zeros(length(t), 2);
+ds = zeros(length(t), 4);
 
-% for i = 1:length(t) 
-%     [ds(i,:), ext(i,:)] = eqns(t(i), s(i,:),rho,g,L,A_t,A_p,d_0,d_1,d_2,C_f,turbine_handle,C_t,I_p);
-% end
+for i = 1:length(t) 
+    [ds(i,:), ext(i,:)] = eqns(t(i), s(i,:),R_w, L_w, T_m, M, b_tau, R, G_R, C_R, g, K_p, K_i, velocity_handle);
+end
 
-display_output;
+P_in = ext(:, 1);
+P_out = ext(:, 2);
+
+P_in_acc = P_in(P_out>0);
+P_out_acc = P_out(P_out>0);
+
+disp(mean(P_in_acc))
+disp(mean(P_out_acc))
+
+disp(mean(P_out_acc)/mean(P_in_acc))
+
+% display_output;
