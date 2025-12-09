@@ -4,7 +4,7 @@ function [ds, ext] = eqns(t, s, R_w, L_w, T_m, M, b_tau, R, G_R, C_R, g, K_p, K_
     p_9 = s(2); 
     d_ref = s(3); 
     d_actual = s(4);
-    E_in
+    E_in = s(5);
 
     u_in = K_p * (velocity_handle(t) - p_9/M) + K_i * (d_ref - d_actual);
 

@@ -1,6 +1,6 @@
 clear;
 parameters; % Load parameters
-initial = [0, 0, 0, 0];
+initial = [0, 0, 0, 0, 0];
 tspan = t_start:t_step:t_end;
 
 % velocity_handle = @(t) velocity_profile(t,t_start,v_ref);
@@ -15,7 +15,7 @@ disp(s(end, 4) - s(end, 5))
 
 %% Graphing
 ext = zeros(length(t), 2);
-ds = zeros(length(t), 4);
+ds = zeros(length(t), 5);
 
 for i = 1:length(t) 
     [ds(i,:), ext(i,:)] = eqns(t(i), s(i,:),R_w, L_w, T_m, M, b_tau, R, G_R, C_R, g, K_p, K_i, velocity_handle);
