@@ -35,12 +35,22 @@ Since the vehicle starts from rest and an initial point that we call "zero", *al
 #pagebreak()
 = Output
 == Part 1
+#fig("graphics/part-1.pdf", cap: [A plot of the vehicle velocity as a response to a 100 volt input to $u_"in"$])
 
-#fig("graphics/part-1.pdf")
+#pagebreak()
+== Part 2
+#fig("graphics/part-2.pdf", cap: [A plot of the velocity response to a $1 "m/s"$ input to $v_"ref"$ for the $K_p$ and $K_i$ we designed.])
 
-
+#pagebreak()
+== Part 3
+#fig("graphics/part-3-complete.pdf", cap: [A plot of the simulated vehicle velocity on the first 300 seconds of the LA92 drive cycle.])
+#fig("graphics/part-3-vref.pdf", cap: [A plot of the simulated vehicle velocity and the reference velocity])
 
 #pagebreak()
 = Discussion
+== Part 1
 
-The actual velocity has a negligible lag of 0.083 m/s behind the commanded velocity, this value was measured with MATLAB's cursor tools. There was also a negligible overshoot of 0.024 m/s at the peak around 46 s, this value was also measured with MATLAB's cursor tools. Besides a primary overshoot due to the P value, there are no cursory oscillations as controlled by the large I value. The performance of the controller does not vary much with the speed of the vehicle
+== Part 2
+The actual velocity has a negligible lag of 0.083 m/s behind the commanded velocity, this value was measured with MATLAB's cursor tools. There was also a negligible overshoot of 0.024 m/s at the peak around 46s, this value was also measured with MATLAB's cursor tools. Besides a primary overshoot due to the P value, there are no cursory oscillations as controlled by the large I value. The performance of the controller does not vary much with the speed of the vehicle, when measured the over/undershoot of the vehicle measures to be roughly 0.015 m/s for the peaks the lag also stays consistent.
+
+== Part 3

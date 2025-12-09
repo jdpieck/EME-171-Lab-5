@@ -18,8 +18,10 @@
   show link: it => underline(text(accent.lighten(10%), it))
   set text(font: "IBM Plex Sans", lang: "en")
 
-   show figure.caption: set text(.9em, fill: accent)
-  // show figure.caption.where(body: []): it => it.supplement + [ ] + context it.counter.display()
+  show figure.caption: set text(.9em, fill: accent, weight: "semibold")
+   // show figure.caption: underline
+  show figure.caption.where(body: []): it => it.supplement + [ ] + context it.counter.display()
+  show figure: set block(below: 2em)
 
   show heading.where(level: 1): set text(fill: accent)
   show heading.where(level: 2): set text(fill: luma(20%))
